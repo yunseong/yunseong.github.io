@@ -73,4 +73,5 @@
 	```
 	
 * stop-dfs and stop-yarn
+* $HADOOP_HOME/bin/hdfs namenode -format
 * Start daemons again
