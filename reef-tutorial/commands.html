@@ -15,7 +15,8 @@
     
         <p>
             This page is intended to support all the URL links and commands used in the REEF tutorial, especially for the <em>Setting up the environment</em> section.<br/>
-             If you use Ubuntu, you may want to use a shell script made by Taegeon. You can take a look at it <a href="https://github.com/yunseong/yunseong.github.io/tree/master/reef-tutorial">here</a>
+             If you use Ubuntu, you may want to use a shell script made by Taegeon. You can take a look at it <a href="https://github.com/yunseong/yunseong.github.io/tree/master/reef-tutorial">here</a><br/>
+             If you use OSX, you may want to use Homebrew to install applications. Please refer to <a href="http://brew.sh">brew.sh</a>
         </p>
         
         <h3>Install Java 7</h3>
@@ -38,7 +39,7 @@ exit
             </li>
             <li>Download Hadoop
                 <p>
-            wget http://mirror.apache-kr.org/hadoop/core/hadoop-2.2.0/hadoop-2.2.0.tar.gz
+            wget http://mirror.apache-kr.org/hadoop/core/hadoop-2.2.0/hadoop-2.2.0.tar.gz<br/>
 cd {dir_to_install} (your home is OK)<br/>
 tar xzvf hadoop-2.2.0.tar.gz<br/>
 Set path variables in your profile (~/.profile)<br/>
@@ -46,10 +47,25 @@ export HADOOP_HOME = {dir_you_installed}<br/>
 export YARN_HOME = {dir_you_installed}<br/>
                     </p>
 </li>
+<li>
+<p>add followings into $HADOOP_HOME/etc/hadoop/core-site.xml</p>
+<code>
+    
+<configuration>
+    <property>
+        <name>fs.defaultFS</name>
+        <value>hdfs://localhost:9000</value>
+    </property>
+</configuration>
+</code>
+</li>
+        <li>
+            format the namenode  : $HADOOP_HOME/bin/hdfs namenode -format
+        </li>
             <li>Check hadoop successfully installed
             <p>
-                HADOOP_HOME/sbin/start-dfs.sh<br/>
-                HADOOP_HOME/sbin/start-yarn.sh
+                $HADOOP_HOME/sbin/start-dfs.sh<br/>
+                $HADOOP_HOME/sbin/start-yarn.sh
                 </p>
                 
             </li>
@@ -74,15 +90,17 @@ hadoop jar $HADOOP_HOME/share/hadoop/mapreduce/hadoop-mapreduce-examples-2.2.0.j
 <li>git --version</li>
             </ul>
         <h3>Install Maven</h3>
+        <ul>
 <li>(Linux) sudo apt-get install maven</li>
 <li>(OSX) brew install maven</li>
 <li>mvn -version # Should be v3.x</li>
-        
+        </ul>
         <h3>Install Protocol Buffer</h3>
+        <ul>
 <li>(Linux) https://code.google.com/p/protobuf/</li>
 <li>(OSX) brew install protobuf</li>
 <li>protoc --version # Should be v2.5.0</li>
-        
+        </ul>
         <h3>Build REEF</h3>
     <ul>
     <li>git clone https://github.com/Microsoft-CISL/TANG.git</li>
@@ -94,6 +112,7 @@ hadoop jar $HADOOP_HOME/share/hadoop/mapreduce/hadoop-mapreduce-examples-2.2.0.j
 <ul>
     <li>cd $REEF_HOME/reef-examples</li>
 <li>HelloREEF : mvn -PHelloREEF</li>
+<li>HelloREEFYarn : download via https://github.com/yunseong/yunseong.github.io/blob/master/reef-tutorial/helloreefyarn.sh</li>
 <li>RetainedEval : mvn -PRetainedEval</li>
 <li>StatePassing : Part of REEF-tests</li>
 <li>GroupCommunication : Not working currently</li>
