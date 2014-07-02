@@ -47,6 +47,18 @@ export HADOOP_HOME = {dir_you_installed}<br/>
 export YARN_HOME = {dir_you_installed}<br/>
                     </p>
 </li>
+<li>
+<p>add followings into $HADOOP_HOME/etc/hadoop/core-site.xml</p>
+    <pre>
+    
+<configuration>
+    <property>
+        <name>fs.defaultFS</name>
+        <value>hdfs://localhost:9000</value>
+    </property>
+</configuration>
+    </pre>
+</li>
             <li>Check hadoop successfully installed
             <p>
                 HADOOP_HOME/sbin/start-dfs.sh<br/>
