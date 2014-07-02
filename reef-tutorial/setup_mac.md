@@ -56,6 +56,14 @@ In `$HADOOP_HOME/etc/hadoop`, you can find the configuration scripts and files -
 		<name>dfs.replication</name>
 		<value>1</value>
 	</property>
+	<property>
+   		<name>dfs.namenode.name.dir</name>
+   		<value>file:/usr/local/hadoop-2.2.0/dfs/name</value>
+ 	</property>
+ 	<property>
+   		<name>dfs.datanode.data.dir</name>
+   		<value>file:/usr/local/hadoop-2.2.0/dfs/data</value>
+ 	</property>
 </configuration>
 	
 	```
