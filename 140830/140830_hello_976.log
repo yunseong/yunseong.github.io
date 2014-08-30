@@ -1,0 +1,264 @@
+
+
+Container: container_1407928099291_0603_01_000001 on node02-Optiplex-9020_50298
+=================================================================================
+LogType: driver.stderr
+LogLength: 8366
+Log Contents:
+Aug 30, 2014 3:28:12 PM com.microsoft.reef.runtime.common.launch.REEFErrorHandler onNext
+SEVERE: Uncaught exception.
+java.lang.Exception: Unable to instantiate the clock
+	at com.microsoft.reef.runtime.common.launch.LaunchClass.fail(LaunchClass.java:179)
+	at com.microsoft.reef.runtime.common.launch.LaunchClass.getClock(LaunchClass.java:146)
+	at com.microsoft.reef.runtime.common.launch.LaunchClass.run(LaunchClass.java:159)
+	at com.microsoft.reef.runtime.common.Launcher.main(Launcher.java:108)
+Caused by: java.lang.NoClassDefFoundError: org/apache/hadoop/yarn/client/api/async/AMRMClientAsync$CallbackHandler
+	at java.lang.ClassLoader.defineClass1(Native Method)
+	at java.lang.ClassLoader.defineClass(ClassLoader.java:800)
+	at java.security.SecureClassLoader.defineClass(SecureClassLoader.java:142)
+	at java.net.URLClassLoader.defineClass(URLClassLoader.java:449)
+	at java.net.URLClassLoader.access$100(URLClassLoader.java:71)
+	at java.net.URLClassLoader$1.run(URLClassLoader.java:361)
+	at java.net.URLClassLoader$1.run(URLClassLoader.java:355)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.net.URLClassLoader.findClass(URLClassLoader.java:354)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:425)
+	at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:308)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:358)
+	at java.lang.Class.forName0(Native Method)
+	at java.lang.Class.forName(Class.java:270)
+	at sun.reflect.generics.factory.CoreReflectionFactory.makeNamedType(CoreReflectionFactory.java:114)
+	at sun.reflect.generics.visitor.Reifier.visitClassTypeSignature(Reifier.java:125)
+	at sun.reflect.generics.tree.ClassTypeSignature.accept(ClassTypeSignature.java:49)
+	at sun.reflect.generics.visitor.Reifier.reifyTypeArguments(Reifier.java:68)
+	at sun.reflect.generics.visitor.Reifier.visitClassTypeSignature(Reifier.java:138)
+	at sun.reflect.generics.tree.ClassTypeSignature.accept(ClassTypeSignature.java:49)
+	at sun.reflect.generics.repository.ConstructorRepository.getParameterTypes(ConstructorRepository.java:94)
+	at java.lang.reflect.Constructor.getGenericParameterTypes(Constructor.java:245)
+	at com.microsoft.tang.implementation.java.JavaNodeFactory.createConstructorDef(JavaNodeFactory.java:301)
+	at com.microsoft.tang.implementation.java.JavaNodeFactory.createClassNode(JavaNodeFactory.java:109)
+	at com.microsoft.tang.implementation.java.ClassHierarchyImpl.buildPathToNode(ClassHierarchyImpl.java:207)
+	at com.microsoft.tang.implementation.java.ClassHierarchyImpl.registerClass(ClassHierarchyImpl.java:383)
+	at com.microsoft.tang.implementation.java.ClassHierarchyImpl.register(ClassHierarchyImpl.java:325)
+	at com.microsoft.tang.implementation.java.ClassHierarchyImpl.getNode(ClassHierarchyImpl.java:253)
+	at com.microsoft.tang.implementation.ConfigurationBuilderImpl.bind(ConfigurationBuilderImpl.java:167)
+	at com.microsoft.tang.formats.AvroConfigurationSerializer.fromAvro(AvroConfigurationSerializer.java:221)
+	at com.microsoft.tang.formats.AvroConfigurationSerializer.fromAvro(AvroConfigurationSerializer.java:165)
+	at com.microsoft.tang.formats.AvroConfigurationSerializer.fromFile(AvroConfigurationSerializer.java:240)
+	at com.microsoft.reef.runtime.common.launch.LaunchClass.readConfigurationFromDisk(LaunchClass.java:106)
+	at com.microsoft.reef.runtime.common.launch.LaunchClass.getClockConfiguration(LaunchClass.java:86)
+	at com.microsoft.reef.runtime.common.launch.LaunchClass.getClock(LaunchClass.java:139)
+	... 2 more
+Caused by: java.lang.ClassNotFoundException: org.apache.hadoop.yarn.client.api.async.AMRMClientAsync$CallbackHandler
+	at java.net.URLClassLoader$1.run(URLClassLoader.java:366)
+	at java.net.URLClassLoader$1.run(URLClassLoader.java:355)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.net.URLClassLoader.findClass(URLClassLoader.java:354)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:425)
+	at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:308)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:358)
+	... 37 more
+
+Aug 30, 2014 3:28:12 PM com.microsoft.reef.runtime.common.launch.REEFErrorHandler onNext
+SEVERE: Uncaught exception.
+java.lang.Exception: Fatal exception while executing the clock
+	at com.microsoft.reef.runtime.common.launch.LaunchClass.fail(LaunchClass.java:179)
+	at com.microsoft.reef.runtime.common.launch.LaunchClass.run(LaunchClass.java:161)
+	at com.microsoft.reef.runtime.common.Launcher.main(Launcher.java:108)
+Caused by: java.lang.RuntimeException: Unable to instantiate the clock
+	at com.microsoft.reef.runtime.common.launch.LaunchClass.getClock(LaunchClass.java:147)
+	at com.microsoft.reef.runtime.common.launch.LaunchClass.run(LaunchClass.java:159)
+	... 1 more
+Caused by: java.lang.NoClassDefFoundError: org/apache/hadoop/yarn/client/api/async/AMRMClientAsync$CallbackHandler
+	at java.lang.ClassLoader.defineClass1(Native Method)
+	at java.lang.ClassLoader.defineClass(ClassLoader.java:800)
+	at java.security.SecureClassLoader.defineClass(SecureClassLoader.java:142)
+	at java.net.URLClassLoader.defineClass(URLClassLoader.java:449)
+	at java.net.URLClassLoader.access$100(URLClassLoader.java:71)
+	at java.net.URLClassLoader$1.run(URLClassLoader.java:361)
+	at java.net.URLClassLoader$1.run(URLClassLoader.java:355)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.net.URLClassLoader.findClass(URLClassLoader.java:354)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:425)
+	at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:308)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:358)
+	at java.lang.Class.forName0(Native Method)
+	at java.lang.Class.forName(Class.java:270)
+	at sun.reflect.generics.factory.CoreReflectionFactory.makeNamedType(CoreReflectionFactory.java:114)
+	at sun.reflect.generics.visitor.Reifier.visitClassTypeSignature(Reifier.java:125)
+	at sun.reflect.generics.tree.ClassTypeSignature.accept(ClassTypeSignature.java:49)
+	at sun.reflect.generics.visitor.Reifier.reifyTypeArguments(Reifier.java:68)
+	at sun.reflect.generics.visitor.Reifier.visitClassTypeSignature(Reifier.java:138)
+	at sun.reflect.generics.tree.ClassTypeSignature.accept(ClassTypeSignature.java:49)
+	at sun.reflect.generics.repository.ConstructorRepository.getParameterTypes(ConstructorRepository.java:94)
+	at java.lang.reflect.Constructor.getGenericParameterTypes(Constructor.java:245)
+	at com.microsoft.tang.implementation.java.JavaNodeFactory.createConstructorDef(JavaNodeFactory.java:301)
+	at com.microsoft.tang.implementation.java.JavaNodeFactory.createClassNode(JavaNodeFactory.java:109)
+	at com.microsoft.tang.implementation.java.ClassHierarchyImpl.buildPathToNode(ClassHierarchyImpl.java:207)
+	at com.microsoft.tang.implementation.java.ClassHierarchyImpl.registerClass(ClassHierarchyImpl.java:383)
+	at com.microsoft.tang.implementation.java.ClassHierarchyImpl.register(ClassHierarchyImpl.java:325)
+	at com.microsoft.tang.implementation.java.ClassHierarchyImpl.getNode(ClassHierarchyImpl.java:253)
+	at com.microsoft.tang.implementation.ConfigurationBuilderImpl.bind(ConfigurationBuilderImpl.java:167)
+	at com.microsoft.tang.formats.AvroConfigurationSerializer.fromAvro(AvroConfigurationSerializer.java:221)
+	at com.microsoft.tang.formats.AvroConfigurationSerializer.fromAvro(AvroConfigurationSerializer.java:165)
+	at com.microsoft.tang.formats.AvroConfigurationSerializer.fromFile(AvroConfigurationSerializer.java:240)
+	at com.microsoft.reef.runtime.common.launch.LaunchClass.readConfigurationFromDisk(LaunchClass.java:106)
+	at com.microsoft.reef.runtime.common.launch.LaunchClass.getClockConfiguration(LaunchClass.java:86)
+	at com.microsoft.reef.runtime.common.launch.LaunchClass.getClock(LaunchClass.java:139)
+	... 2 more
+Caused by: java.lang.ClassNotFoundException: org.apache.hadoop.yarn.client.api.async.AMRMClientAsync$CallbackHandler
+	at java.net.URLClassLoader$1.run(URLClassLoader.java:366)
+	at java.net.URLClassLoader$1.run(URLClassLoader.java:355)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.net.URLClassLoader.findClass(URLClassLoader.java:354)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:425)
+	at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:308)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:358)
+	... 37 more
+
+Aug 30, 2014 3:28:12 PM com.microsoft.reef.runtime.common.Launcher main
+INFO: Exiting Launcher.main()
+
+LogType: driver.stdout
+LogLength: 0
+Log Contents:
+
+
+
+Container: container_1407928099291_0603_02_000001 on node04-Optiplex-9020_51492
+=================================================================================
+LogType: driver.stderr
+LogLength: 9456
+Log Contents:
+Aug 30, 2014 3:27:46 PM com.microsoft.reef.runtime.common.launch.REEFErrorHandler onNext
+SEVERE: Uncaught exception.
+java.lang.Exception: Unable to instantiate the clock
+	at com.microsoft.reef.runtime.common.launch.LaunchClass.fail(LaunchClass.java:179)
+	at com.microsoft.reef.runtime.common.launch.LaunchClass.getClock(LaunchClass.java:146)
+	at com.microsoft.reef.runtime.common.launch.LaunchClass.run(LaunchClass.java:159)
+	at com.microsoft.reef.runtime.common.Launcher.main(Launcher.java:108)
+Caused by: java.lang.NoClassDefFoundError: org/apache/hadoop/yarn/client/api/async/AMRMClientAsync$CallbackHandler
+	at java.lang.ClassLoader.defineClass1(Native Method)
+	at java.lang.ClassLoader.defineClass(ClassLoader.java:800)
+	at java.security.SecureClassLoader.defineClass(SecureClassLoader.java:142)
+	at java.net.URLClassLoader.defineClass(URLClassLoader.java:449)
+	at java.net.URLClassLoader.access$100(URLClassLoader.java:71)
+	at java.net.URLClassLoader$1.run(URLClassLoader.java:361)
+	at java.net.URLClassLoader$1.run(URLClassLoader.java:355)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.net.URLClassLoader.findClass(URLClassLoader.java:354)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:425)
+	at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:308)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:358)
+	at java.lang.Class.forName0(Native Method)
+	at java.lang.Class.forName(Class.java:270)
+	at sun.reflect.generics.factory.CoreReflectionFactory.makeNamedType(CoreReflectionFactory.java:114)
+	at sun.reflect.generics.visitor.Reifier.visitClassTypeSignature(Reifier.java:125)
+	at sun.reflect.generics.tree.ClassTypeSignature.accept(ClassTypeSignature.java:49)
+	at sun.reflect.generics.visitor.Reifier.reifyTypeArguments(Reifier.java:68)
+	at sun.reflect.generics.visitor.Reifier.visitClassTypeSignature(Reifier.java:138)
+	at sun.reflect.generics.tree.ClassTypeSignature.accept(ClassTypeSignature.java:49)
+	at sun.reflect.generics.repository.ConstructorRepository.getParameterTypes(ConstructorRepository.java:94)
+	at java.lang.reflect.Constructor.getGenericParameterTypes(Constructor.java:245)
+	at com.microsoft.tang.implementation.java.JavaNodeFactory.createConstructorDef(JavaNodeFactory.java:301)
+	at com.microsoft.tang.implementation.java.JavaNodeFactory.createClassNode(JavaNodeFactory.java:109)
+	at com.microsoft.tang.implementation.java.ClassHierarchyImpl.buildPathToNode(ClassHierarchyImpl.java:207)
+	at com.microsoft.tang.implementation.java.ClassHierarchyImpl.registerClass(ClassHierarchyImpl.java:383)
+	at com.microsoft.tang.implementation.java.ClassHierarchyImpl.register(ClassHierarchyImpl.java:325)
+	at com.microsoft.tang.implementation.java.ClassHierarchyImpl.getNode(ClassHierarchyImpl.java:253)
+	at com.microsoft.tang.implementation.ConfigurationBuilderImpl.bind(ConfigurationBuilderImpl.java:167)
+	at com.microsoft.tang.formats.AvroConfigurationSerializer.fromAvro(AvroConfigurationSerializer.java:221)
+	at com.microsoft.tang.formats.AvroConfigurationSerializer.fromAvro(AvroConfigurationSerializer.java:165)
+	at com.microsoft.tang.formats.AvroConfigurationSerializer.fromFile(AvroConfigurationSerializer.java:240)
+	at com.microsoft.reef.runtime.common.launch.LaunchClass.readConfigurationFromDisk(LaunchClass.java:106)
+	at com.microsoft.reef.runtime.common.launch.LaunchClass.getClockConfiguration(LaunchClass.java:86)
+	at com.microsoft.reef.runtime.common.launch.LaunchClass.getClock(LaunchClass.java:139)
+	... 2 more
+Caused by: java.lang.ClassNotFoundException: org.apache.hadoop.yarn.client.api.async.AMRMClientAsync$CallbackHandler
+	at java.net.URLClassLoader$1.run(URLClassLoader.java:366)
+	at java.net.URLClassLoader$1.run(URLClassLoader.java:355)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.net.URLClassLoader.findClass(URLClassLoader.java:354)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:425)
+	at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:308)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:358)
+	... 37 more
+
+Aug 30, 2014 3:27:46 PM com.microsoft.reef.runtime.common.launch.REEFErrorHandler onNext
+SEVERE: Uncaught exception.
+java.lang.Exception: Fatal exception while executing the clock
+	at com.microsoft.reef.runtime.common.launch.LaunchClass.fail(LaunchClass.java:179)
+	at com.microsoft.reef.runtime.common.launch.LaunchClass.run(LaunchClass.java:161)
+	at com.microsoft.reef.runtime.common.Launcher.main(Launcher.java:108)
+Caused by: java.lang.RuntimeException: Unable to instantiate the clock
+	at com.microsoft.reef.runtime.common.launch.LaunchClass.getClock(LaunchClass.java:147)
+	at com.microsoft.reef.runtime.common.launch.LaunchClass.run(LaunchClass.java:159)
+	... 1 more
+Caused by: java.lang.NoClassDefFoundError: org/apache/hadoop/yarn/client/api/async/AMRMClientAsync$CallbackHandler
+	at java.lang.ClassLoader.defineClass1(Native Method)
+	at java.lang.ClassLoader.defineClass(ClassLoader.java:800)
+	at java.security.SecureClassLoader.defineClass(SecureClassLoader.java:142)
+	at java.net.URLClassLoader.defineClass(URLClassLoader.java:449)
+	at java.net.URLClassLoader.access$100(URLClassLoader.java:71)
+	at java.net.URLClassLoader$1.run(URLClassLoader.java:361)
+	at java.net.URLClassLoader$1.run(URLClassLoader.java:355)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.net.URLClassLoader.findClass(URLClassLoader.java:354)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:425)
+	at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:308)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:358)
+	at java.lang.Class.forName0(Native Method)
+	at java.lang.Class.forName(Class.java:270)
+	at sun.reflect.generics.factory.CoreReflectionFactory.makeNamedType(CoreReflectionFactory.java:114)
+	at sun.reflect.generics.visitor.Reifier.visitClassTypeSignature(Reifier.java:125)
+	at sun.reflect.generics.tree.ClassTypeSignature.accept(ClassTypeSignature.java:49)
+	at sun.reflect.generics.visitor.Reifier.reifyTypeArguments(Reifier.java:68)
+	at sun.reflect.generics.visitor.Reifier.visitClassTypeSignature(Reifier.java:138)
+	at sun.reflect.generics.tree.ClassTypeSignature.accept(ClassTypeSignature.java:49)
+	at sun.reflect.generics.repository.ConstructorRepository.getParameterTypes(ConstructorRepository.java:94)
+	at java.lang.reflect.Constructor.getGenericParameterTypes(Constructor.java:245)
+	at com.microsoft.tang.implementation.java.JavaNodeFactory.createConstructorDef(JavaNodeFactory.java:301)
+	at com.microsoft.tang.implementation.java.JavaNodeFactory.createClassNode(JavaNodeFactory.java:109)
+	at com.microsoft.tang.implementation.java.ClassHierarchyImpl.buildPathToNode(ClassHierarchyImpl.java:207)
+	at com.microsoft.tang.implementation.java.ClassHierarchyImpl.registerClass(ClassHierarchyImpl.java:383)
+	at com.microsoft.tang.implementation.java.ClassHierarchyImpl.register(ClassHierarchyImpl.java:325)
+	at com.microsoft.tang.implementation.java.ClassHierarchyImpl.getNode(ClassHierarchyImpl.java:253)
+	at com.microsoft.tang.implementation.ConfigurationBuilderImpl.bind(ConfigurationBuilderImpl.java:167)
+	at com.microsoft.tang.formats.AvroConfigurationSerializer.fromAvro(AvroConfigurationSerializer.java:221)
+	at com.microsoft.tang.formats.AvroConfigurationSerializer.fromAvro(AvroConfigurationSerializer.java:165)
+	at com.microsoft.tang.formats.AvroConfigurationSerializer.fromFile(AvroConfigurationSerializer.java:240)
+	at com.microsoft.reef.runtime.common.launch.LaunchClass.readConfigurationFromDisk(LaunchClass.java:106)
+	at com.microsoft.reef.runtime.common.launch.LaunchClass.getClockConfiguration(LaunchClass.java:86)
+	at com.microsoft.reef.runtime.common.launch.LaunchClass.getClock(LaunchClass.java:139)
+	... 2 more
+Caused by: java.lang.ClassNotFoundException: org.apache.hadoop.yarn.client.api.async.AMRMClientAsync$CallbackHandler
+	at java.net.URLClassLoader$1.run(URLClassLoader.java:366)
+	at java.net.URLClassLoader$1.run(URLClassLoader.java:355)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.net.URLClassLoader.findClass(URLClassLoader.java:354)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:425)
+	at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:308)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:358)
+	... 37 more
+
+Aug 30, 2014 3:27:46 PM com.microsoft.wake.remote.transport.netty.NettyMessagingTransport open
+WARNING: Connection refused. Retry 1 of 3
+Aug 30, 2014 3:27:46 PM com.microsoft.wake.remote.transport.netty.NettyMessagingTransport open
+WARNING: Connection refused. Retry 1 of 3
+Aug 30, 2014 3:27:56 PM com.microsoft.wake.remote.impl.RemoteSenderStage close
+WARNING: Executor did not terminate in 10,000 ms.
+Aug 30, 2014 3:27:56 PM com.microsoft.wake.remote.impl.RemoteSenderStage close
+WARNING: Executor dropped 0 tasks.
+Aug 30, 2014 3:27:56 PM com.microsoft.wake.remote.transport.netty.NettyMessagingTransport open
+WARNING: Thread Thread[com.microsoft.wake.remote.impl.RemoteSenderStage-pool-6-thread-1,5,main] interrupted while sleeping
+Aug 30, 2014 3:27:56 PM com.microsoft.wake.remote.transport.netty.NettyMessagingTransport open
+WARNING: Thread Thread[com.microsoft.wake.remote.impl.RemoteSenderStage-pool-6-thread-2,5,main] interrupted while sleeping
+Aug 30, 2014 3:27:56 PM com.microsoft.wake.remote.transport.netty.NettyMessagingTransport open
+WARNING: Connection refused. Retry 2 of 3
+Aug 30, 2014 3:27:56 PM com.microsoft.reef.runtime.common.Launcher main
+INFO: Exiting Launcher.main()
+
+LogType: driver.stdout
+LogLength: 0
+Log Contents:
+
