@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>REEF Tutorial 141029</title>
+        <meta name="description" content="An interactive getting started guide for Brackets.">
+        <link rel="stylesheet" href="main.css">
+    </head>
+    <body>
+
+        <h1>REEF Tutorial</h1>
+        <h2>Commands</h2>
+        
+        <h3>Install Java</h3>
+        <ul><li>(OSX)<p>sudo ln -s /usr/bin/java /bin/java</p></li></ul>
+
+    
+        <h3>Install Hadoop</h3>
+        <ul>
+            <li>Enable SSH
+            <p>
+                ssh localhost # see if it works. If it does not work,
+                ssh-keygen –t rsa –P ‘’ –f ~/.ssh/id_rsa<br/>
+cat ~/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys<br/>
+exit
+</p>
+            </li>
+            <li>Download Hadoop & Set path variables in the profile (e.g. ~/.profile)
+                <p>
+export HADOOP_HOME = {dir_you_installed}<br/>
+export YARN_HOME = {dir_you_installed}<br/>
+source ~/.profile
+                    </p>
+</li>
+
+        <li>
+            Format namenode
+            <p>$HADOOP_HOME/bin/hadoop namenode -format</p>
+        </li>
+            <li>Check hadoop successfully installed
+            <p>
+                $HADOOP_HOME/sbin/start-dfs.sh<br/>
+                $HADOOP_HOME/sbin/start-yarn.sh
+                </p>
+            </li>
+            <li>
+            You can see it working via web interface
+                <p>
+                    {Namenode} http://localhost:50070<br/>
+                    {YARN} http://localhost:8088
+                </p>
+            </li>
+            <li>Run an example application
+                <p>
+yarn  jar $HADOOP_HOME/share/hadoop/yarn/hadoop-yarn-applications-distributedshell-2.4.0.jar org.apache.hadoop.yarn.applications.distributedshell.Client --jar $HADOOP_HOME/share/hadoop/yarn/hadoop-yarn-applications-distributedshell-2.4.0.jar --shell_command date --num_containers 2
+                </p>
+            </li>
+            
+        </ul>
+<h3>Running Examples</h3>
+<ul>
+    <li>Go to {REEF_DIR}/reef-examples<p></p></li>
+    
+<li>HelloREEFYarn
+    <p>yarn jar target/reef-examples-0.10-incubating-SNAPSHOT-shaded.jar org.apache.reef.examples.hello.HelloReefYarn
+    </p></li>
+<li>RetainedEval
+    <p>yarn jar target/reef-examples-0.10-incubating-SNAPSHOT-shaded.jar org.apache.reef.examples.retained_eval.Launch</p></li>
+</ul>
+    </body>
+</html>
