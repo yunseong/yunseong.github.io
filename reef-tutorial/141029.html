@@ -21,10 +21,11 @@
         <ul>
             <li>Enable SSH
             <p>
-                ssh localhost # see if it works. If it does not work,
-                ssh-keygen –t rsa –P ‘’ –f ~/.ssh/id_rsa<br/>
-cat ~/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys<br/>
-exit
+ssh localhost # 1 If it works, go to Next step<br/>
+ls ~/.ssh/id_rsa # 2 If a key file exists, go to 4<br/>
+ssh-keygen -t rsa -P ‘’ -f ~/.ssh/id_rsa # 3 Do not copy & paste. Write on your own :)<br/>
+cat ~/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys # 4<br/>
+ssh localhost # it works now?
 </p>
             </li>
             <li>Download Hadoop & Set path variables in the profile (e.g. ~/.profile)
