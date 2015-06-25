@@ -95,27 +95,32 @@ hadoop jar $HADOOP_HOME/share/hadoop/mapreduce/hadoop-mapreduce-examples-2.2.0.j
 <li>(OSX) brew install maven</li>
 <li>mvn -version # Should be v3.x</li>
         </ul>
-        <h3>Install Protocol Buffer</h3>
+        <h3>Install Protocol Buffer 2.5.0</h3>
         <ul>
-<li>(Linux) https://code.google.com/p/protobuf/</li>
-<li>(OSX) brew install protobuf</li>
+<li><b>MUST BE v2.5.0!!!</b></li>
+<li>wget https://github.com/google/protobuf/releases/download/v2.5.0/protobuf-2.5.0.tar.gz</li>
+<li>tar xzvf protobuf-2.5.0.tar.gz</li>
+<li>cd protobuf-2.5.0</li>
+<li>./configure</li>
+<li>make</li>
+<li>sudo make install</li>
 <li>protoc --version # Should be v2.5.0</li>
+<li><i>if above command doesn't work, try:</i> sudo ldconfig</li>
         </ul>
         <h3>Build REEF</h3>
     <ul>
-    <li>git clone https://github.com/Microsoft-CISL/TANG.git</li>
-        <li>cd TANG</li>
+    <li>git clone https://github.com/apache/incubator-reef.git</li>
+        <li>cd incubator-reef</li>
 <li>mvn -T1C -q -fae -DskipTests clean install eclipse:clean eclipse:eclipse package</li>
+<li><i>skip the eclipse command in case you don't use eclipse</i></li>
         </ul>
 </li>
 <h3>Running Examples</h3>
 <ul>
-    <li>cd $REEF_HOME/reef-examples</li>
-<li>HelloREEF : mvn -PHelloREEF</li>
-<li>HelloREEFYarn : download via https://github.com/yunseong/yunseong.github.io/blob/master/reef-tutorial/helloreefyarn.sh</li>
-<li>RetainedEval : mvn -PRetainedEval</li>
-<li>StatePassing : Part of REEF-tests</li>
-<li>GroupCommunication : Not working currently</li>
+    <li>cd $REEF_HOME</li>
+<li>HelloREEF : java -cp lang/java/reef-examples/target/reef-examples-*-shaded.jar org.apache.reef.examples.hello.HelloREEF</li>
+<li>HelloReefYarn : yarn jar lang/java/reef-examples/target/reef-examples-*-shaded.jar org.apache.reef.examples.hello.HelloReefYarn</li>
+<li><i>check <a href="https://cwiki.apache.org/confluence/display/REEF/Tutorials">wiki</a> for more info</i></li>
 
 </ul>
     </body>
