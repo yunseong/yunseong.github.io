@@ -7,7 +7,7 @@ INTERVAL_SEC=1
 MASTER_NAME=REEFLauncher # Please change this if it's not correct.
 SLAVE_NAME=Evaluator # Change this as well
 
-RANDOM_MAX=32767
+RANDOM_MAX=32767 # This is a constant defined in Bash.
 
 while [ `jps -m | grep -c $MASTER_NAME` -gt 0 ]
 do
