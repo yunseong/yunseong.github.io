@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>REEF & YARN Installation Guide (by Yunseong)</title>
+  <meta name="description" content="An interactive getting started guide for Brackets.">
+  <link rel="stylesheet" href="main.css">
+</head>
+<body>
+  <h1>REEF & YARN Installation Guide</h1>
+
+  <h2>Install Java</h2>
+  I recommend to install HotSpot version of Java 7 (or above).
+  <ul>
+    <li>(OSX)
+      <pre>
+        sudo ln -s /usr/bin/java /bin/java
+      </pre>
+    </li>
+  </ul>
+
+  <h2>Install Hadoop</h2>
+  <ul>
+    <li>Enable SSH
+      <pre>
+        ssh localhost # (1) If it works, we can skip SSH part
+        ls ~/.ssh/id_rsa # (2) If a key file exists, go to (4)
+        ssh-keygen -t rsa -P '' -f ~/.ssh/id_rsa # (3) Do not copy & paste. Write on your own :)
+        cat ~/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys # (4)
+        ssh localhost # it works now?
+      </pre>
+    </li>
+    <li>Download Hadoop & Set path variables in the profile (e.g. ~/.profile)
+      <pre>
+        export HADOOP_HOME = {dir_you_installed}
+        export YARN_HOME = {dir_you_installed}
+        source ~/.profile # Or you may use ~/.bash_profile or ~/.bashrc
+      </pre>
+    </li>
+    <li>
+      Format namenode
+      <pre>
+        $HADOOP_HOME/bin/hadoop namenode -format
+      </pre>
+    </li>
+    <li>Check hadoop successfully installed
+      <pre>
+        $HADOOP_HOME/sbin/start-dfs.sh
+        $HADOOP_HOME/sbin/start-yarn.sh
+      </pre>
+    </li>
+    <li>
+      You can see it working via web interface
+      <pre>
+        {Namenode} http://localhost:50070
+        {YARN} http://localhost:8088
+      </pre>
+    </li>
+    <li>Run an example application
+      <pre>
+        yarn jar $HADOOP_HOME/share/hadoop/yarn/hadoop-yarn-applications-distributedshell-*.jar $HADOOP_HOME/share/hadoop/yarn/hadoop-yarn-applications-distributedshell-*.jar --shell_command date --num_containers 2
+      </pre>
+    </li>
+
+  </ul>
+  <h2>Running Examples</h2>
+  Now we can run REEF example on YARN environment.
+  <pre>
+    cd {REEF_DIR}/reef-examples # REEF_DIR: Where you installed REEF
+    yarn jar target/reef-examples-*-shaded.jar org.apache.reef.examples.hello.HelloReefYarn
+  </pre>
+</body>
+</html>
