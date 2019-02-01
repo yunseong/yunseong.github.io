@@ -10,7 +10,7 @@ website: yunseong.github.io
 
 # Social links
 github_username: yunseong 
-linkedin_username: jameswgrant
+linkedin_username: yunseong-lee-522616117
 # googleplus_username: +jekyll
 
 # About Section
@@ -32,14 +32,14 @@ educaton_title: Education
 
 # More Section
 # more_title: A Little More About Me
-more_content: | # this will include new lines to allow paragraphs
-  Alongside my interests in networks and software engineering some of my other interests and hobbies are:
-   - Kettlebell, Yoga, Swimming
-   - Playing guitar
-   - Traveling around world
+#more_content: | # this will include new lines to allow paragraphs
+#  Alongside my interests in networks and software engineering some of my other interests and hobbies are:
+#   - Kettlebell, Yoga, Swimming
+#   - Playing guitar
+#   - Traveling around world
 
 # Footer
-footer_show_references: true
+#footer_show_references: true
 
 # Build settings
 remote_theme: sproogen/resume-theme
