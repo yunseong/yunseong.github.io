@@ -106,10 +106,29 @@
                         <div class="company">Seoul National University, Seoul, South Korea</div>
                     <!--//meta-->
                     <div class="details">
-                        <p>I have studied and built large-scale data processing systems, recently focusing on Machine Learning (ML) training and inference workloads. I engaged in open source activities in the Apache Software Foundation.</p>  
+                        <p>I have studied and built large-scale data processing systems, recently focusing on building Machine Learning (ML) and Deep Learning (DL) inference systems. I have participated in the following projects:</p>  
+                        <ul>
+                          <li><b>Pretzel</b>: A white box ML inference system for model pipelines. Unlike previous black box systems, Pretzel exploits knowledge of models obtained from the training phase. This knowledge enables Pretzel to optimize the end-to-end execution plan of models. Pretzel also considers multiple models to be served together and schedules CPU/memory resources more efficiently.</li>
+                          <li><b>RnB (Replicate-and-Batch)</b>: A multi-GPU DL inference system for DNN pipelines. DNN pipelines often consist of sub-networks with heterogeneous performance characteristics (e.g., latency). To optimize the throughput and latency, RnB replicates each sub-network to a different number of GPUs and batches (or splits) inputs of each sub-network based on their sizes. RnB is built on PyTorch.</li>
+                          <li><b>Splash</b>: A DL system for collaborative inference in a distributed environment with embedded devices and a hub machine. Splash aims to run highly accurate (but heavy) DNN models on computationally weak devices with assistance of the strong hub. Splash applies compression techniques such as Tucker decomposition to reduce the inference latency. Splash currently supports TensorFlow and Caffe2.</li>
+                          <li><b>ICCV 2019 AIA (AI Acceleration) Challenge</b>: I participated in the AIA challenge, specifically in the DSP (Digital Signal Processor) track. I ran a DNN model on TFLite (with Android NNAPI) and accelerated the model by utilizing DSPs (e.g., NPU) with optimizations such as quantization.</li>
+                        </ul>
                     </div><!--//details-->
                 </div><!--//item-->
-                 
+                
+                <div class="item">
+                    <div class="meta">
+                        <div class="upper-row">
+                            <h3 class="job-title">Project Management Committee (PMC)</h3>
+                            <div class="time">Sep 2014 - Present</div>
+                        </div><!--//upper-row-->
+                        <div class="company">Apache REEF</div>
+                    <!--//meta-->
+                    <div class="details">
+                        <p>I am one of the committee members of the Apache REEF. I worked as the release manager of REEF v0.14.</p>  
+                    </div><!--//details-->
+                </div><!--//item--> 
+
                 <div class="item">
                     <div class="meta">
                         <div class="upper-row">
@@ -119,7 +138,7 @@
                         <div class="company">Microsoft, Redmond, WA, USA</div>
                     <!--//meta-->
                     <div class="details">
-                        <p>I designed and built a prediction serving system for ML pipelines (named Pretzel) and evaluate the system with production-scale workloads. This research was published in OSDI ’18.</p>  
+                        <p>I investigated how to optimize ML inference systems with white box approaches. The research was published in ICCD, NIPS ML Systems workshop, SysML, OSDI, and IEEE Data Engineering bulletin.</p>  
                     </div><!--//details-->
                 </div><!--//item-->
 
@@ -132,23 +151,9 @@
                         <div class="company">Microsoft Research Asia, Beijing, China</div>
                     <!--//meta-->
                     <div class="details">
-                        <p>I participated in the Pado project, a data processing system for handling transient resources (EuroSys ’17).</p>  
+                        <p>I participated in the Pado project, a data processing system for handling transient resources in data centers. This research was published in EuroSys.</p>  
                     </div><!--//details-->
                 </div><!--//item-->
-
-                <div class="item">
-                    <div class="meta">
-                        <div class="upper-row">
-                            <h3 class="job-title">Project Management Committee (PMC)</h3>
-                            <div class="time">Sep 2014 - Present</div>
-                        </div><!--//upper-row-->
-                        <div class="company">Apache REEF</div>
-                    <!--//meta-->
-                    <div class="details">
-                        <p>I am one of the committee members of the Apache REEF. I worked as the release manager of REEF v0.14.</p>  
-                    </div><!--//details-->
-                </div><!--//item-->
-
 
             </section><!--//section-->
            
